@@ -1,2 +1,3 @@
 # devskiller
-This is any answers of a tes devskiller to a technical skill for developer mid.
+
+This is the answers to a tes in the platform devskiller to a technical skill for developer php level mid.
