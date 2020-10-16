@@ -1,0 +1,65 @@
+
+questions:
+What is a UTS namespace on Linux responsible for?
+allows to change property value smoothly in CSS.
+Which command could be used to print content of the Linux kernel log buffer?
+Which one of the following stream <-> fd assignments are correct?
+Which command can be used to determine the free space available on a filesystems on GNU/Linux system?
+codeIgniter allows the user to create her own libraries and load them into a controller
+redirect to the controller ProductController action log
+Redirecting to a different route after submit form Laravel
+directory are the views stored in Laravel?
+In a Laravel application, are all requests directed to the public/index.php file?
+
+
+queryes:
+Given the table Items (columns: itemid, description, unitcost), formulate a query to find each item that costs more than the average and how much more than the average it costs.
+
+SELECT i.itemid, 
+       i.description, 
+       i.unitcost - a.avg_cost cost_diff
+FROM (SELECT AVG(unitcost) avg_cost FROM Items) a
+JOIN Items i
+ON i.unitcost > a.avg_cost
+
+
+Select clients whose first order was placed in 2017 and calculate how much income was genereted in 2018 (total) per each of them.
+
+SELECT 
+     client, SUM(income) 
+ FROM
+     orders 
+ WHERE
+     YEAR(order_date) = '2018' 
+     AND client IN (
+          SELECT client 
+          FROM orders 
+          GROUP BY client 
+          HAVING MIN(YEAR(order_date)) = '2017')
+ GROUP BY
+     client;
+
+have 3 tables:
+create table books(id int, title varchar(250), year int, author varchar(250));
+
+create table reviewers(id int, name varchar(250));
+
+create table ratings(reviewer_id int, book_id int, rating int, rating_date date);
+
+Select titles of all books that have at least one rating of 4 or higher Titles must be ordered alphabetically.
+
+SELECT title FROM books WHERE id IN (SELECT book_id FROM ratings WHERE rating >= 4) ORDER BY title;
+
+Find the titles of all movies that have no ratings.
+SELECT m.title
+FROM movie m
+WHERE m.mID not in (SELECT r.mID FROM rating r);
+
+
+devops:
+Install a web server in linux via command line:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install apache2 mysql-server php
+
+
